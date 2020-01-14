@@ -2,7 +2,7 @@ package solid.ocp.conformance;
 
 import java.awt.Graphics;
 
-public class Circle {
+public class Circle implements Drawable{
 
 	private int centerX;
 	private int centerY;
@@ -25,5 +25,8 @@ public class Circle {
 	public int getRadius() {
 		return radius;
 	}
-
+	
+	public void draw(Graphics g) {
+		g.drawArc(centerX-radius, centerY-radius, radius*2, radius*2, 0, 360);
+	}
 }
